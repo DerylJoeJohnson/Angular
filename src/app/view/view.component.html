@@ -5,4 +5,21 @@
 <h2>Address</h2>
 <h4>{{address.hno}},{{address.str}},{{address.dist}} </h4>
 <h3>My Hobbies are killing</h3>
-<ul><li *ngFor="let hb of hobbies"> {{hb}} </li></ul>   <!-- dont forget ngFor -->
+<ul><li *ngFor="let hb of hobbies;let i = index" > {{i+1}}  {{hb}} </li></ul>   <!-- dont forget ngFor -->
+
+<table border="1">
+    <tr>
+        <td></td>
+        <td>Project Name</td>
+        <td>Duration</td>
+        <td>END DATE</td>
+    </tr>
+    <tr *ngFor="let p of projects; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.dr}}</td>
+        <td>{{p.ed}}</td>
+    </tr>
+
+</table>
+<input type="button" name="btn1" value="ADD NEW PROJECT"(click)="add()">
